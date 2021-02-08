@@ -12,20 +12,20 @@ provider "prismacloud" {
     json_config_file = ".prismacloud_auth.json"
 }
 
-resource "prismacloud_compliance_standard" "CS_PAG" {
-    name = "Porsche AG"
-    description = "Compliance Standards Porsche AG"
+resource "prismacloud_compliance_standard" "CS_PANW" {
+    name = "PANW"
+    description = "Compliance Standards PANW"
 }
 
-resource "prismacloud_compliance_standard_requirement" "CSR_PAG_BB" {
-    cs_id = prismacloud_compliance_standard.CS_PAG.cs_id
-    name = "PAG - Building Blocks"
-    description = "PAG Building Blocks"
-    requirement_id = "PAG Building Blocks"
+resource "prismacloud_compliance_standard_requirement" "CSR_PANW_TEAM1" {
+    cs_id = prismacloud_compliance_standard.CS_PANW.cs_id
+    name = "PANW - Building Blocks"
+    description = "PANW Building Blocks"
+    requirement_id = "PANW Building Blocks"
 }
 
-resource "prismacloud_compliance_standard_requirement_section" "CSRS_PAG_BB_EC2" {
-    csr_id = prismacloud_compliance_standard_requirement.CSR_PAG_BB.csr_id
+resource "prismacloud_compliance_standard_requirement_section" "CSRS_PANW_TEAM1_EC2" {
+    csr_id = prismacloud_compliance_standard_requirement.CSR_PANW_TEAM1.csr_id
     section_id = "EC2"
     description = "Requirement Section for EC2"
 }
@@ -73,14 +73,14 @@ resource "prismacloud_policy" "this" {
         }
     }
     compliance_metadata {
-      compliance_id     = prismacloud_compliance_standard_requirement_section.CSRS_PAG_BB_EC2.csrs_id
+      compliance_id     = prismacloud_compliance_standard_requirement_section.CSRS_PANW_TEAM1_EC2.csrs_id
       custom_assigned = true
-      requirement_id = prismacloud_compliance_standard_requirement.CSR_PAG_BB.requirement_id
-      requirement_name = prismacloud_compliance_standard_requirement.CSR_PAG_BB.name
-      section_id = prismacloud_compliance_standard_requirement_section.CSRS_PAG_BB_EC2.section_id
-      standard_name = prismacloud_compliance_standard.CS_PAG.name
-      #compliance_id     = prismacloud_compliance_standard.CS_PAG.cs_id
-      #requirement_id    = prismacloud_compliance_standard_requirement.CSR_PAG_BB.csr_id
-      #section_id        = prismacloud_compliance_standard_requirement_section.CSRS_PAG_BB_EC2.csrs_id
+      requirement_id = prismacloud_compliance_standard_requirement.CSR_PANW_TEAM1.requirement_id
+      requirement_name = prismacloud_compliance_standard_requirement.CSR_PANW_TEAM1.name
+      section_id = prismacloud_compliance_standard_requirement_section.CSRS_PANW_TEAM1_EC2.section_id
+      standard_name = prismacloud_compliance_standard.CS_PANW.name
+      #compliance_id     = prismacloud_compliance_standard.CS_PANW.cs_id
+      #requirement_id    = prismacloud_compliance_standard_requirement.CSR_PANW_TEAM1.csr_id
+      #section_id        = prismacloud_compliance_standard_requirement_section.CSRS_PANW_TEAM1_EC2.csrs_id
     }
 }
