@@ -1,0 +1,6 @@
+{
+  "registry.terraform.io/paloaltonetworks/prismacloud": {
+    "hash": "h1:mVM7JOIqRBOWzA2kst9jFqk7HL5w379yp5oIp2jz65w=",
+    "version": "1.1.0"
+  }
+}
