@@ -9,7 +9,7 @@ terraform {
 
 # Configure the prismacloud provider
 provider "prismacloud" {
-    json_config_file = ".prismacloud_auth.json"
+    #json_config_file = ".prismacloud_auth.json"
 }
 
 resource "prismacloud_compliance_standard" "CS_PANW" {
