@@ -2,7 +2,7 @@
 
 Working TF module to provision a compliance standard (with requirement and section), RQL search, saved search and policy from it that ties to the compliance standard.
 
-The provider config file is/can be expected at: .prismacloud_auth.json
+The provider config file is/can be expected at the `.prismacloud_auth.json` file.
 An example config structure can look like:
 ```
 {
