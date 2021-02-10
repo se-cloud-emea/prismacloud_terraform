@@ -79,8 +79,8 @@ resource "prismacloud_policy" "this" {
       requirement_name = prismacloud_compliance_standard_requirement.CSR_PANW_TEAM1.name
       section_id = prismacloud_compliance_standard_requirement_section.CSRS_PANW_TEAM1_EC2.section_id
       standard_name = prismacloud_compliance_standard.CS_PANW.name
-      #compliance_id     = prismacloud_compliance_standard.CS_PANW.cs_id
-      #requirement_id    = prismacloud_compliance_standard_requirement.CSR_PANW_TEAM1.csr_id
-      #section_id        = prismacloud_compliance_standard_requirement_section.CSRS_PANW_TEAM1_EC2.csrs_id
+      section_description = prismacloud_compliance_standard_requirement_section.CSRS_PANW_TEAM1_EC2.description
+      standard_description = prismacloud_compliance_standard.CS_PANW.description
+      #only mandatory parameter is compliance_id which corresponds to the section ID (not requirement and not compliance. section ID will identify those 2 automatically).
     }
 }
